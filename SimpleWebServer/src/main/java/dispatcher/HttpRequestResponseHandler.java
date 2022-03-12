@@ -32,7 +32,7 @@ public class HttpRequestResponseHandler implements Runnable {
             while (!line.isEmpty()) {
                 if (lineNo == 1) {
                     path = extractPathFromLine(line);
-                    type = line.contains("currency") ?
+                    type = (line.contains("currency") || line.contains("home")) ?
                             (line.contains("home") ? "home" : "currency") : "";
                 }
                 lineNo++;
